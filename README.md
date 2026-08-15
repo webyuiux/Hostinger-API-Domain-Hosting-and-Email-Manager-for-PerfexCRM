@@ -15,8 +15,11 @@ The **Domain Manager Hostinger** module extends PerfexCRM with a full domain and
 ## Screenshots
 
 ![Dashboard](screenshots/Screenshot%202026-08-15%20at%206.54.45%20PM.png)
+
 ![Domains](screenshots/Screenshot%202026-08-15%20at%206.54.58%20PM.png)
+
 ![Hosting](screenshots/Screenshot%202026-08-15%20at%206.55.08%20PM.png)
+
 ![Settings](screenshots/Screenshot%202026-08-15%20at%206.55.26%20PM.png)
 
 ---
