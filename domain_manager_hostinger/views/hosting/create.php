@@ -1,0 +1,109 @@
+<?php init_head(); ?>
+<div id="wrapper">
+    <div class="content">
+        <div class="tw-max-w-2xl tw-mx-auto">
+
+            <h4 class="tw-mt-0 tw-font-bold tw-text-lg tw-text-neutral-700">
+                <i class="fa fa-plus-circle tw-mr-2 tw-text-primary"></i><?php echo _l('domain_manager_hosting_add'); ?>
+            </h4>
+
+            <?php echo form_open(admin_url('domain_manager_hostinger/save_hosting'), ['id' => 'save_form']); ?>
+
+            <div class="panel_s">
+                <div class="panel-body">
+
+                    <!-- Website / Domain -->
+                    <div class="form-group">
+                        <label class="control-label" for="website_name">
+                            <?php echo _l('domain_manager_website_name'); ?> <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" name="website_name" id="website_name" class="form-control" required
+                               placeholder="<?php echo _l('domain_manager_website_name_ph'); ?>" autocomplete="off">
+                    </div>
+
+                    <div class="row">
+                        <!-- Client -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label"><?php echo _l('domain_manager_client'); ?></label>
+                                <select name="client_id" id="client_id" class="selectpicker form-control" data-width="100%"
+                                        data-live-search="true">
+                                    <option value=""><?php echo _l('domain_manager_no_client'); ?></option>
+                                    <?php foreach ($clients as $client) { ?>
+                                    <option value="<?= $client['userid']; ?>"><?= e($client['company']); ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Status -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label"><?php echo _l('domain_manager_status'); ?></label>
+                                <select name="status" id="status" class="selectpicker form-control" data-width="100%">
+                                    <option value="active"><?php echo _l('domain_manager_active'); ?></option>
+                                    <option value="suspended"><?php echo _l('domain_manager_suspended'); ?></option>
+                                    <option value="expired"><?php echo _l('domain_manager_expired'); ?></option>
+                                    <option value="pending"><?php echo _l('domain_manager_pending'); ?></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Start Date -->
+                        <div class="col-md-6">
+                            <?php echo render_date_input('domain_manager_start_date', _l('domain_manager_start_date'), '',
+                                ['id' => 'domain_manager_start_date', 'autocomplete' => 'off']); ?>
+                        </div>
+
+                        <!-- Expiry Date -->
+                        <div class="col-md-6">
+                            <?php echo render_date_input('domain_manager_expiry_date', _l('domain_manager_expiry_date'), '',
+                                ['id' => 'domain_manager_expiry_date', 'autocomplete' => 'off']); ?>
+                        </div>
+
+                        <!-- Hosting Provider (optional) -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label"><?php echo _l('domain_manager_provider'); ?> <small class="text-muted">(optional)</small></label>
+                                <input type="text" name="domain_manager_provider" id="domain_manager_provider"
+                                       class="form-control" placeholder="<?php echo _l('domain_manager_provider_ph'); ?>" autocomplete="off">
+                            </div>
+                        </div>
+
+                        <!-- Website URL (for quick open) -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Website URL <small class="text-muted">(optional - for quick open)</small></label>
+                                <div class="input-group">
+                                    <input type="text" name="access_url" id="access_url"
+                                           class="form-control" placeholder="e.g. https://clientsite.com" autocomplete="off">
+                                    <span class="input-group-addon"><i class="fa fa-external-link"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notes -->
+                    <?php echo render_textarea('description', _l('domain_manager_notes'), '',
+                        ['placeholder' => 'Any additional notes about this website...']); ?>
+
+                </div>
+                <div class="panel-footer text-right">
+                    <a href="<?= admin_url('domain_manager_hostinger/hosting_list'); ?>" class="btn btn-default tw-mr-2">Cancel</a>
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fa fa-save tw-mr-1"></i> Save Website
+                    </button>
+                </div>
+            </div>
+
+            <?php echo form_close(); ?>
+        </div>
+    </div>
+</div>
+<?php init_tail(); ?>
+<script>
+    $(".menu-item-domain_manager").addClass('active');
+    $(".sub-menu-item-hosting_view_list").addClass('active');
+</script>
+</body>
+</html>
