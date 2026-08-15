@@ -1,4 +1,4 @@
-# 🌐 Domain Manager Hostinger — PerfexCRM Module
+# Domain Manager Hostinger — PerfexCRM Module
 
 **Module Name:** Hostinger Manager  
 **Version:** 1.0.1  
@@ -8,13 +8,20 @@
 
 ---
 
-## 📖 Overview
+## Overview
 
 The **Domain Manager Hostinger** module extends PerfexCRM with a full domain and web hosting management system. It integrates directly with the **Hostinger API** to sync domains and websites automatically, tracks expiry dates, links assets to clients and projects, and sends automated expiry notification emails.
 
+## Screenshots
+
+![Dashboard](screenshots/Screenshot%202026-08-15%20at%206.54.45%20PM.png)
+![Domains](screenshots/Screenshot%202026-08-15%20at%206.54.58%20PM.png)
+![Hosting](screenshots/Screenshot%202026-08-15%20at%206.55.08%20PM.png)
+![Settings](screenshots/Screenshot%202026-08-15%20at%206.55.26%20PM.png)
+
 ---
 
-## ✨ Key Features
+## Key Features
 
 | Feature | Description |
 |---|---|
@@ -30,7 +37,7 @@ The **Domain Manager Hostinger** module extends PerfexCRM with a full domain and
 
 ---
 
-## 📁 Module File Structure
+## Module File Structure
 
 ```
 modules/domain_manager_hostinger/
@@ -92,7 +99,7 @@ modules/domain_manager_hostinger/
 
 ---
 
-## 🗄️ Database Schema
+## Database Schema
 
 ### `tbl_domain_manager` — Domains Table
 
@@ -173,7 +180,7 @@ Tracks which expiry notification emails have already been sent to prevent duplic
 
 ---
 
-## 🔌 Hostinger API Integration
+## Hostinger API Integration
 
 The module integrates with the **Hostinger API** (https://developers.hostinger.com) to auto-import and sync domain and website data.
 
@@ -196,7 +203,7 @@ The module hooks into PerfexCRM's `after_cron_run` action. Sync runs **once ever
 
 ---
 
-## 📧 Expiry Notification System
+## Expiry Notification System
 
 Automated email notifications are sent to configured recipients when a domain or hosting plan is approaching expiry.
 
@@ -225,7 +232,7 @@ Each notification send is logged in `tbl_expiry_notification_logs`. Before sendi
 
 ---
 
-## ⚙️ Module Settings (Admin Panel)
+## Module Settings (Admin Panel)
 
 Navigate to **Admin → Settings → Domain Manager** to configure:
 
@@ -239,7 +246,7 @@ Navigate to **Admin → Settings → Domain Manager** to configure:
 
 ---
 
-## 🔐 Permissions
+## Permissions
 
 The module defines granular permissions for staff members:
 
@@ -254,7 +261,7 @@ Permissions are managed through **Admin → Staff → Roles**.
 
 ---
 
-## 📦 Migrations
+## Migrations
 
 | Migration | Version | Changes |
 |---|---|---|
@@ -263,7 +270,7 @@ Permissions are managed through **Admin → Staff → Roles**.
 
 ---
 
-## 🚀 Changes Made During Development
+## Changes Made During Development
 
 ### 1. Hostinger API Model (`models/Hostinger_api_model.php`)
 - Built full REST API integration class with Bearer token authentication
@@ -337,7 +344,7 @@ Several diagnostic scripts were created during debugging and testing:
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 ### Prerequisites
 - XAMPP (PHP 8.1+, MySQL, Apache)
@@ -361,7 +368,7 @@ Several diagnostic scripts were created during debugging and testing:
 
 ---
 
-## 🆘 Troubleshooting
+## Troubleshooting
 
 ### Module not appearing in Modules list
 - Ensure the folder name exactly matches: `domain_manager_hostinger`
@@ -384,7 +391,7 @@ Several diagnostic scripts were created during debugging and testing:
 
 ---
 
-## 📞 Support
+## Support
 
 For support, contact **Virrat Global** at https://virratglobal.com/
 
